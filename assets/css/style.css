@@ -1,0 +1,132 @@
+/*...........................................HOMEPAGE*/
+
+body {
+    font-family: 'Amatic SC', cursive;
+}
+
+/*...........................................background*/
+
+.homepage-bg {
+    height: 100vh;
+    background: url('../images/solar-system.jpg') no-repeat center left fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*...........................................callout*/
+
+.callout-title {
+    position: absolute;
+    right: 150px;
+    top: 15%;
+    text-align: right;
+}
+
+.callout-button {
+    position: absolute;
+    right: 150px;
+    top: 75%;
+    text-align: right;
+}
+
+.callout-text {
+    color: #F8F8FF;
+    font-weight: bold;
+    font-size: 70px;
+    text-align: right;
+}
+
+/*...........................................button*/
+
+.btn--detail {
+
+    border-radius: 23px;
+    width: 160px;
+    padding: 0px;
+}
+
+.btn--green {
+    background-color: #00AD00;
+    border-color: #00AD00;
+}
+
+.btn--green:hover,
+.btn--green:active,
+.btn--green:focus,
+.btn--green:active:focus {
+    background-color: #007A00;
+    border-color: #007A00;
+}
+
+a {
+    font-size: 30px;
+    font-weight: bold;
+    color: #F8F8FF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F8F8FF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*...........................................media*/
+
+@media(max-width: 1280px) {
+    .homepage-bg {
+    height: 100vh;
+    background: url('../images/solar-system-portrait.jpg') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.callout-title {
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    padding: 40px;
+}
+
+.callout-button {
+    position: absolute;
+    right: 0;
+    top: 90%;
+    width: 100%;
+    text-align: center;
+}
+
+.callout-text {
+    color: #F8F8FF;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+}
+
+@media(max-width:640px) {
+    .callout-text {
+    color: #F8F8FF;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+}
