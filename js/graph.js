@@ -71,22 +71,22 @@
 
  //................................................NUMBERDISPLAY LENGTH OF DAY//
 
-function show_length_of_day(ndx) {
- var day_length = ndx.groupAll().reduce(
-  function (p, v) {
-   p.count++;
-   p.total += v.lengthOfDay;
-  return p;
-  },
-  function (p, v) {
-   p.count--;
-   p.total -= v.lengthOfDay;
-  return p;
-  },
-  function() {
-   return {count: 0, total: 0};
-  });
-  
+ function show_length_of_day(ndx) {
+  var day_length = ndx.groupAll().reduce(
+   function(p, v) {
+    p.count++;
+    p.total += v.lengthOfDay;
+    return p;
+   },
+   function(p, v) {
+    p.count--;
+    p.total -= v.lengthOfDay;
+    return p;
+   },
+   function() {
+    return { count: 0, total: 0 };
+   });
+
   dc.numberDisplay("#length-of-day")
    .formatNumber(d3.format(".1f"))
    .valueAccessor(function(d) {
@@ -102,22 +102,22 @@ function show_length_of_day(ndx) {
 
  //................................................NUMBERDISPLAY ROTATION PERIOD//
 
-function show_rotation_period(ndx) {
- var rotation = ndx.groupAll().reduce(
-  function (p, v) {
-   p.count++;
-   p.total += v.rotationPeriod;
-  return p;
-  },
-  function (p, v) {
-   p.count--;
-   p.total -= v.rotationPeriod;
-  return p;
-  },
-  function() {
-   return {count: 0, total: 0};
-  });
-  
+ function show_rotation_period(ndx) {
+  var rotation = ndx.groupAll().reduce(
+   function(p, v) {
+    p.count++;
+    p.total += v.rotationPeriod;
+    return p;
+   },
+   function(p, v) {
+    p.count--;
+    p.total -= v.rotationPeriod;
+    return p;
+   },
+   function() {
+    return { count: 0, total: 0 };
+   });
+
   dc.numberDisplay("#rotation-period")
    .formatNumber(d3.format(".1f"))
    .valueAccessor(function(d) {
@@ -130,25 +130,25 @@ function show_rotation_period(ndx) {
    })
    .group(rotation);
  }
- 
+
  //................................................NUMBERDISPLAY ORBITAL PERIOD//
 
-function show_orbital_period(ndx) {
- var orbital_period = ndx.groupAll().reduce(
-  function (p, v) {
-   p.count++;
-   p.total += v.orbitalPeriod;
-  return p;
-  },
-  function (p, v) {
-   p.count--;
-   p.total -= v.orbitalPeriod;
-  return p;
-  },
-  function() {
-   return {count: 0, total: 0};
-  });
-  
+ function show_orbital_period(ndx) {
+  var orbital_period = ndx.groupAll().reduce(
+   function(p, v) {
+    p.count++;
+    p.total += v.orbitalPeriod;
+    return p;
+   },
+   function(p, v) {
+    p.count--;
+    p.total -= v.orbitalPeriod;
+    return p;
+   },
+   function() {
+    return { count: 0, total: 0 };
+   });
+
   dc.numberDisplay("#orbital-period")
    .formatNumber(d3.format(".1f"))
    .valueAccessor(function(d) {
@@ -161,7 +161,7 @@ function show_orbital_period(ndx) {
    })
    .group(orbital_period);
  }
- 
+
 
  //................................................PIECHART PLANET COMPOSITION//
 
@@ -279,8 +279,8 @@ function show_orbital_period(ndx) {
 
  //................................................BARCHART ORBIT ECCENTRICITY//
 
-function show_orbit_eccentricity(ndx) {
- var name_dim = ndx.dimension(dc.pluck('name'));
+ function show_orbit_eccentricity(ndx) {
+  var name_dim = ndx.dimension(dc.pluck('name'));
   var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalEccentricity'));
 
   dc.barChart("#orbit-eccentricity")
@@ -297,11 +297,11 @@ function show_orbit_eccentricity(ndx) {
    .yAxisLabel("Orbit eccentricity (??????)")
    .yAxis().ticks(10);
  }
- 
+
  //................................................BARCHART ORBIT INCLINATION//
 
-function show_orbit_inclination(ndx) {
- var name_dim = ndx.dimension(dc.pluck('name'));
+ function show_orbit_inclination(ndx) {
+  var name_dim = ndx.dimension(dc.pluck('name'));
   var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalInclination'));
 
   dc.barChart("#orbit-inclination")
@@ -318,11 +318,11 @@ function show_orbit_inclination(ndx) {
    .yAxisLabel("Orbit inclination (degrees)")
    .yAxis().ticks(10);
  }
- 
+
  //................................................ROWCHART DISTANCE FROM SUN//
- 
-function show_distance_from_sun(ndx) {
- var name_dim = ndx.dimension(dc.pluck('name'));
+
+ function show_distance_from_sun(ndx) {
+  var name_dim = ndx.dimension(dc.pluck('name'));
   var distance_group = name_dim.group().reduceSum(dc.pluck('distanceFromSun'));
 
   dc.rowChart("#distance-from-sun")
