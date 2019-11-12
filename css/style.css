@@ -130,3 +130,51 @@ a:hover {
     text-align: center;
 }
 }
+
+/*...........................................DASHBOARD*/
+
+/*...........................................navbar*/
+
+.navbar-container {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    border: 0;
+}
+
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+}
+
+.navbar .navbar-nav a {
+    font-weight: bold;
+}
+
+/*...........................................visuals*/
+
+.dashboard-bg {
+    background-color: black;
+}
+
+.section-heading, #planet-selector {
+    display: inline-block;
+    float: none;
+    margin: 0;
+}
+
+.number-box {
+	margin-right: 75px;
+}
+
+.row {
+    margin: 0;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="assets/js/dc.min.js"></script>
+    <script type="text/javascript" src="assets/js/queue.min.js"></script>
+    <script type="text/javascript" src="assets/js/graph.js"></script>
+
+    <title>The Planets</title>
+</head>
+
+<body>
+    <div class="container-fluid navbar-container">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a href="index.html" class="navbar-brand">The Planets</a>
+
+            <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="active nav-item mr-2"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planetary Bios</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Mercury</a>
+                            <a class="dropdown-item" href="#">Venus</a>
+                            <a class="dropdown-item" href="#">Earth</a>
+                            <a class="dropdown-item" href="#">Mars</a>
+                            <a class="dropdown-item" href="#">Jupiter</a>
+                            <a class="dropdown-item" href="#">Saturn</a>
+                            <a class="dropdown-item" href="#">Uranus</a>
+                            <a class="dropdown-item" href="#">Neptune</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <main>
+
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <h1 class="section-heading">Planet Selector</h1>
+                        <div id="planet-selector"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <p class="section-paragraph">Planetary Escape Velocity</p>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-lg-6">
+                        <i class="fa fa-space-shuttle" aria-hidden="true"></i> <span class="number-box" id="escape-velocity"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 text-center">
+                        <h1>Planetary Composition</h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 text-center">
+                        <h1>Planetary Mass</h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 text-center">
+                        <h1>Number of Moons</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 text-center" id="composition"></div>
+                    <div class="col-xs-12 col-sm-6 text-center" id="planet-mass"></div>
+                    <div class="col-xs-12 col-sm-3 text-center" id="number-of-moons"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center">
+                        <h1>Distance from the Sun</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 text-center" id="sun-distance"></div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+</body>
+
+</html>
