@@ -4,6 +4,65 @@ body {
     font-family: 'Amatic SC', cursive;
 }
 
+/*...........................................NAVBAR*/
+
+.navbar {
+    position: fixed;
+    margin-bottom: 0;
+    border: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.navbar .navbar-toggler {
+    border: 0;
+}
+
+.navbar-collapse {
+    color: #000000;
+}
+
+.navbar .navbar-collapse {
+    text-align: right;
+    border-top: 1px solid transparent;
+    overflow-x: hidden;
+}
+
+.navbar-fixed-top .container {
+    text-align: right;
+    margin-right: 1%;
+    margin-top: 1%;
+}
+
+.navbar-right {
+    float: right!important;
+}
+
+.nav-link-design {
+    font-family: 'Special Elite', sans-serif;
+    font-weight: 200;
+    color: #000000;
+}
+
+.navbar-name {
+    font-family: 'Special Elite', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    color: #000000;
+}
+
+.nav-item-1 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-item-2 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
 /*...........................................background*/
 
 .homepage-bg {

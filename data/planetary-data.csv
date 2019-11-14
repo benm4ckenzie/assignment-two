@@ -1,4 +1,4 @@
-,name,mass,diameter,density,gravity,escapeVelocity,rotationPeriod,lengthOfDay,distanceFromSun,perihelion,aphelion,orbitalEccentricity,orbitalPeriod,orbitalVelocity,orbitalInclination,meanTemperature,numberOfMoons,ringSystem,globalMagneticField,spinDirection,composition
+order,name,mass,diameter,density,gravity,escapeVelocity,rotationPeriod,lengthOfDay,distanceFromSun,perihelion,aphelion,orbitalEccentricity,orbitalPeriod,orbitalVelocity,orbitalInclination,meanTemperature,numberOfMoons,ringSystem,globalMagneticField,spinDirection,composition
 1,Mercury,0.33,4879,5427,3.7,4.3,1407.6,4222.6,57.9,46,69.8,0.205,88,47.4,7,167,0,No,Yes,Anterograde,Rock
 2,Venus,4.87,12104,5243,8.9,10.4,5832.5,2802,108.2,107.5,108.9,0.007,224.7,35,3.4,464,0,No,No,Retrograde,Rock
 3,Earth,5.97,12756,5514,9.8,11.2,23.9,24,149.6,147.1,152.1,0.017,365.2,29.8,0,15,1,No,Yes,Anterograde,Rock

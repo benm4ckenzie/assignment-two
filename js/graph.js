@@ -6,18 +6,19 @@
   var ndx = crossfilter(planetData);
 
   planetData.forEach(function(d) {
-   d.mass = parseInt(d.mass);
-   d.gravity = parseInt(d.gravity);
-   d.density = parseInt(d.density);
-   d.distanceFromSun = parseInt(d.distanceFromSun);
-   d.orbitalVelocity = parseInt(d.orbitalVelocity);
-   d.orbitalPeriod = parseInt(d.orbitalPeriod);
-   d.escapeVelocity = parseInt(d.escapeVelocity);
-   d.lengthOfDay = parseInt(d.lengthOfDay);
-   d.rotationPeriod = parseInt(d.rotationPeriod);
-   d.numberOfMoons = parseInt(d.numberOfMoons);
-   d.orbitalInclination = parseInt(d.orbitalInclination);
-   d.orbitalEccentricity = parseInt(d.orbitalEccentricity);
+   d.order = parseFloat(d.order);
+   d.mass = parseFloat(d.mass);
+   d.gravity = parseFloat(d.gravity);
+   d.density = parseFloat(d.density);
+   d.distanceFromSun = parseFloat(d.distanceFromSun);
+   d.orbitalVelocity = parseFloat(d.orbitalVelocity);
+   d.orbitalPeriod = parseFloat(d.orbitalPeriod);
+   d.escapeVelocity = parseFloat(d.escapeVelocity);
+   d.lengthOfDay = parseFloat(d.lengthOfDay);
+   d.rotationPeriod = parseFloat(d.rotationPeriod);
+   d.numberOfMoons = parseFloat(d.numberOfMoons);
+   d.orbitalInclination = parseFloat(d.orbitalInclination);
+   d.orbitalEccentricity = parseFloat(d.orbitalEccentricity);
   })
 
   show_planet_selector(ndx);
@@ -43,7 +44,7 @@
 
   dc.renderAll();
  }
-
+        
  //................................................DROPDOWN PLANET SELECTOR//
 
  function show_planet_selector(ndx) {
@@ -162,7 +163,6 @@
    .group(orbital_period);
  }
 
-
  //................................................PIECHART PLANET COMPOSITION//
 
  function show_planet_composition(ndx) {
@@ -244,13 +244,14 @@
   dc.barChart("#planetary-mass")
    .width(400)
    .height(300)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_mass)
    .transitionDuration(500)
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
-   .elasticY(true)
+   .elasticY(false)
    .xAxisLabel("Planet")
    .yAxisLabel("Mass (x 10^24 kg)")
    .yAxis().ticks(10);
@@ -265,13 +266,14 @@
   dc.barChart("#planetary-temperature")
    .width(400)
    .height(300)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
    .transitionDuration(500)
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
-   .elasticY(true)
+   .elasticY(false)
    .xAxisLabel("Planet")
    .yAxisLabel("Mean temperature (Degrees Celcius)")
    .yAxis().ticks(10);
@@ -286,13 +288,14 @@
   dc.barChart("#orbit-eccentricity")
    .width(400)
    .height(300)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
    .transitionDuration(500)
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
-   .elasticY(true)
+   .elasticY(false)
    .xAxisLabel("Planet")
    .yAxisLabel("Orbit eccentricity (??????)")
    .yAxis().ticks(10);
@@ -302,18 +305,23 @@
 
  function show_orbit_inclination(ndx) {
   var name_dim = ndx.dimension(dc.pluck('name'));
-  var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalInclination'));
+  var order_dim = ndx.dimension(dc.pluck('order'));
+  var inclination_dim = ndx.dimension(function(d) {
+   return [d.order, d.name];
+  });
+  var planetary_temp = inclination_dim.group().reduceSum(dc.pluck('orbitalInclination'));
 
   dc.barChart("#orbit-inclination")
    .width(400)
    .height(300)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
    .transitionDuration(500)
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
-   .elasticY(true)
+   .elasticY(false)
    .xAxisLabel("Planet")
    .yAxisLabel("Orbit inclination (degrees)")
    .yAxis().ticks(10);
@@ -323,21 +331,22 @@
 
  function show_distance_from_sun(ndx) {
   var name_dim = ndx.dimension(dc.pluck('name'));
+  var order_dim = ndx.dimension(dc.pluck('order'));
+  /*var distance_dim = ndx.dimension(function(d) {
+   return [d.order, d.name];
+  });*/
   var distance_group = name_dim.group().reduceSum(dc.pluck('distanceFromSun'));
 
   dc.rowChart("#distance-from-sun")
-   .width(400)
-   .height(300)
+   .width(1600)
+   .height(400)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(distance_group)
    .transitionDuration(500)
-   .x(d3.scale.linear())
-   .xUnits(dc.units.linear)
-   .elasticY(true)
-   .yAxisLabel("Planet")
-   .xAxisLabel("km")
-   .xAxis().ticks(10);
+   .ordering(function(d) {return -d.order})
+   .elasticX(false);
  }
 
  //................................................SCATTERPLOT MASS / GRAVITY RELATIONSHIP//
