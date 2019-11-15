@@ -23,33 +23,30 @@
 <body>
 
     <!----------------------------------------------------------------------------------------------------------NAVBAR-->
-   <div class="container-fluid navbar-container">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-            <a href="index.html" class="navbar-brand">The Planets</a>
-
-            <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span></button>
-
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                    <li class="active nav-item mr-2"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Planetary Bios</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Mercury</a>
-                            <a class="dropdown-item" href="#">Venus</a>
-                            <a class="dropdown-item" href="#">Earth</a>
-                            <a class="dropdown-item" href="#">Mars</a>
-                            <a class="dropdown-item" href="#">Jupiter</a>
-                            <a class="dropdown-item" href="#">Saturn</a>
-                            <a class="dropdown-item" href="#">Uranus</a>
-                            <a class="dropdown-item" href="#">Neptune</a>
-                        </div>
-                    </li>
-                </ul>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">The Planets</a>
             </div>
-        </nav>
-    </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="mercury.html">Planet Biographies
+        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="divider"><a href="mercury.html">Mercury</a></li>
+                        <li><a href="#">Venus</a></li>
+                        <li><a href="#">Earth</a></li>
+                        <li><a href="#">Mars</a></li>
+                        <li><a href="#">Jupiter</a></li>
+                        <li><a href="#">Saturn</a></li>
+                        <li><a href="#">Uranus</a></li>
+                        <li><a href="#">Neptune</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <!----------------------------------------------------------------------------------------------------------NAVBAR-->
 
     <div id="row">
@@ -77,14 +74,17 @@
     </div>
 
     <div class="row">
-        <div id="planetary-mass"></div>
-
+        
         <div id="planetary-temperature"></div>
 
         <div id="orbit-eccentricity"></div>
 
         <div id="orbit-inclination"></div>
 
+    </div>
+    
+    <div class="row">
+        <div id="planetary-mass"></div>
     </div>
 
     <div class="row">

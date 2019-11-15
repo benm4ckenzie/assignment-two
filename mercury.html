@@ -8,7 +8,7 @@
   <title>Planets</title>
 
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -17,26 +17,23 @@
   <script type="text/javascript" src="js/crossfilter.min.js"></script>
   <script type="text/javascript" src="js/dc.min.js"></script>
   <script type="text/javascript" src="js/queue.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/graph.js"></script>
 </head>
 
 <body>
-
-  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <!-- <div id="navigation" class="container nav-design">-->
+  <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="index.html">The Planets</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="mercury.html">Planet Biographies
         <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="divider"><a href="#">Mercury</a></li>
+            <li class="divider active"><a href="#">Mercury</a></li>
             <li><a href="#">Venus</a></li>
             <li><a href="#">Earth</a></li>
             <li><a href="#">Mars</a></li>
@@ -49,31 +46,31 @@
       </ul>
     </div>
   </nav>
-
-  <!--<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Page 1</a></li>
-        <li><a href="#">Page 2</a></li>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+  <div class="row">
+    <div class="col">
+      <div id="mercury-pic" class="mercury-pic">
+        <img src="../images/mercury.jpg" alt="with the beatles">
+      </div>
     </div>
   </div>
-</nav>-->
+
+  <div id="mercury-bio" class="col-12"></div>
+
+  <!-- <div id="navigation" class="container nav-design">
+        >
+            <ul data-toggle="collapse" data-target=".navbar-collapse.show" style="padding-left: 0; margin-bottom: 0;"><a class="page-scroll navbar-name" href="#home">The Beatles</a></ul>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item-1 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#about">About</a></li>
+                    <li class="nav-item-2 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#video">Video</a></li>
+                    <li class="nav-item-2 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#music">Music</a></li>
+                    <li class="nav-item-2 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>-->
 
 </body>
 

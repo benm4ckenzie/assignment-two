@@ -30,10 +30,10 @@
   show_magnetic_field(ndx);
   show_rotation_direction(ndx);
   show_planet_ring_system(ndx);
-  show_planetary_mass(ndx);
   show_planetary_temperature(ndx);
   show_orbit_eccentricity(ndx);
   show_orbit_inclination(ndx);
+  show_planetary_mass(ndx);
   show_distance_from_sun(ndx);
   show_planet_mass_gravity_relationship(ndx);
   show_planet_density_gravity_relationship(ndx);
@@ -44,7 +44,7 @@
 
   dc.renderAll();
  }
-        
+
  //................................................DROPDOWN PLANET SELECTOR//
 
  function show_planet_selector(ndx) {
@@ -177,6 +177,7 @@
   dc.pieChart("#planetary-composition")
    .height(330)
    .radius(90)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(composition_dim)
    .group(comp_group);
  }
@@ -195,6 +196,7 @@
   dc.pieChart("#planetary-magnetic-field")
    .height(330)
    .radius(90)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(magnetic_dim)
    .group(mag_group);
  }
@@ -213,6 +215,7 @@
   dc.pieChart("#planetary-spin-direction")
    .height(330)
    .radius(90)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(rotation_dim)
    .group(spin_group);
  }
@@ -231,30 +234,9 @@
   dc.pieChart("#planetary-ring-system")
    .height(330)
    .radius(90)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(ring_dim)
    .group(ring_group);
- }
-
- //................................................BARCHART PLANETARY MASS//
-
- function show_planetary_mass(ndx) {
-  var name_dim = ndx.dimension(dc.pluck('name'));
-  var planetary_mass = name_dim.group().reduceSum(dc.pluck('mass'));
-
-  dc.barChart("#planetary-mass")
-   .width(400)
-   .height(300)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
-   .margins({ top: 10, right: 50, bottom: 30, left: 50 })
-   .dimension(name_dim)
-   .group(planetary_mass)
-   .transitionDuration(500)
-   .x(d3.scale.ordinal())
-   .xUnits(dc.units.ordinal)
-   .elasticY(false)
-   .xAxisLabel("Planet")
-   .yAxisLabel("Mass (x 10^24 kg)")
-   .yAxis().ticks(10);
  }
 
  //................................................BARCHART PLANETARY TEMPERATURE//
@@ -263,13 +245,19 @@
   var name_dim = ndx.dimension(dc.pluck('name'));
   var planetary_temp = name_dim.group().reduceSum(dc.pluck('meanTemperature'));
 
+  var order = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range([0, 1, 2, 3, 4, 5, 6, 7]);
+
   dc.barChart("#planetary-temperature")
    .width(400)
    .height(300)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
+   .ordering(function(d) {
+    return order(d.key);
+   })
    .transitionDuration(500)
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
@@ -285,13 +273,19 @@
   var name_dim = ndx.dimension(dc.pluck('name'));
   var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalEccentricity'));
 
+  var order = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range([0, 1, 2, 3, 4, 5, 6, 7]);
+
   dc.barChart("#orbit-eccentricity")
    .width(400)
    .height(300)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
+   .ordering(function(d) {
+    return order(d.key);
+   })
    .transitionDuration(500)
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
@@ -305,21 +299,23 @@
 
  function show_orbit_inclination(ndx) {
   var name_dim = ndx.dimension(dc.pluck('name'));
-  var order_dim = ndx.dimension(dc.pluck('order'));
-  var inclination_dim = ndx.dimension(function(d) {
-   return [d.order, d.name];
-  });
-  var planetary_temp = inclination_dim.group().reduceSum(dc.pluck('orbitalInclination'));
+  var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalInclination'));
+
+  var order = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.barChart("#orbit-inclination")
    .width(400)
    .height(300)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
    .transitionDuration(500)
    .x(d3.scale.ordinal())
+   .ordering(function(d) {
+    return order(d.key);
+   })
    .xUnits(dc.units.ordinal)
    .elasticY(false)
    .xAxisLabel("Planet")
@@ -327,15 +323,39 @@
    .yAxis().ticks(10);
  }
 
+ //................................................ROWCHART PLANETARY MASS//
+
+ function show_planetary_mass(ndx) {
+  var name_dim = ndx.dimension(dc.pluck('name'));
+  var mass_group = name_dim.group().reduceSum(dc.pluck('mass'));
+
+  var order = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range([0, 1, 2, 3, 4, 5, 6, 7]);
+
+  dc.rowChart("#planetary-mass")
+   .width(1600)
+   .height(400)
+   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+   .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+   .dimension(name_dim)
+   .group(mass_group)
+   .ordering(function(d) {
+    return order(d.key);
+   })
+   .transitionDuration(500)
+   .elasticX(false);
+ }
+
  //................................................ROWCHART DISTANCE FROM SUN//
 
  function show_distance_from_sun(ndx) {
   var name_dim = ndx.dimension(dc.pluck('name'));
-  var order_dim = ndx.dimension(dc.pluck('order'));
-  /*var distance_dim = ndx.dimension(function(d) {
-   return [d.order, d.name];
-  });*/
   var distance_group = name_dim.group().reduceSum(dc.pluck('distanceFromSun'));
+
+  var order = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.rowChart("#distance-from-sun")
    .width(1600)
@@ -344,8 +364,10 @@
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(distance_group)
+   .ordering(function(d) {
+    return order(d.key);
+   })
    .transitionDuration(500)
-   .ordering(function(d) {return -d.order})
    .elasticX(false);
  }
 
@@ -358,6 +380,10 @@
    return [d.mass, d.gravity, d.name];
   });
   var gravityMassGroup = massDim.group();
+  
+  var myColours = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]);
 
   var maxMass = mass_dim.top(1)[0].mass;
   var maxGravity = gravity_dim.top(1)[0].gravity;
@@ -373,6 +399,9 @@
    .yAxisLabel("Gravity (m / s^2)")
    .title(function(d) {
     return d.key[2] + " has a mass of " + d.key[0] + " x 10^24 kg and a gravitational pull equating to " + d.key[1] + " m / s^2.";
+   })
+   .colors(function(d) {
+    return myColours(d);
    })
    .dimension(massDim)
    .group(gravityMassGroup)
