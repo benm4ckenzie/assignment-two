@@ -17,61 +17,116 @@
   <script type="text/javascript" src="js/crossfilter.min.js"></script>
   <script type="text/javascript" src="js/dc.min.js"></script>
   <script type="text/javascript" src="js/queue.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/graph.js"></script>
 </head>
 
 <body>
-  <!-- <div id="navigation" class="container nav-design">-->
-  <nav class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">The Planets</a>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
+  
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="index.html">The Planets</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="collapsingNavbar">
+      <ul class="nav navbar-nav ml-auto">
         <li><a href="dashboard.html">Dashboard</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="mercury.html">Planet Biographies
-        <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="divider active"><a href="#">Mercury</a></li>
-            <li><a href="#">Venus</a></li>
-            <li><a href="#">Earth</a></li>
-            <li><a href="#">Mars</a></li>
-            <li><a href="#">Jupiter</a></li>
-            <li><a href="#">Saturn</a></li>
-            <li><a href="#">Uranus</a></li>
-            <li><a href="#">Neptune</a></li>
-          </ul>
-        </li>
+        <div class="dropdown">
+          <button class="dropbtn">Select a planet</button>
+          <div class="dropdown-content">
+            <a class="active" href="mercury.html">Mercury</a>
+            <a href="venus.html">Venus</a>
+            <a href="earth.html">Earth</a>
+            <a href="earth.html">Mars</a>
+            <a href="earth.html">Jupiter</a>
+            <a href="earth.html">Saturn</a>
+            <a href="earth.html">Uranus</a>
+            <a href="earth.html"></a>
+          </div>
+        </div>
       </ul>
     </div>
   </nav>
-  <div class="row">
-    <div class="col">
-      <div id="mercury-pic" class="mercury-pic">
-        <img src="../images/mercury.jpg" alt="with the beatles">
+
+  <div class="container-fluid planet-cont">
+    <div class="row planet-box">
+      <div class="col-12 mercury-bg planet-cont">
+        <div class="row planet-box">
+          <div class="col-xs-12 bio-text bio-text-pos">
+            <p class="planet-header">Mercury</p>
+            <p class="bio-para">
+              <br>Sun-scorched Mercury, the smallest planet in our solar system, is only slightly larger than Earth's moon. Like the moon, Mercury has very little atmosphere to stop impacts and it is covered with craters. Mercury's dayside is super-heated
+              by the sun, but at night temperatures drop hundreds of degrees below freezing. Ice may even exist in craters.
+              <br>
+              <br> Distance from the sun: About 58 million km, slightly more than 1/3 as far as the Earth.
+              <br>
+              <br> Year: About 88 Earth days.
+              <br>
+              <br> Day: About 59 Earth days.
+              <br>
+              <br> Diameter: 4879 km, less than half of Earth's.
+              <br>
+              <br> Temperatures: -173 degrees Celcius on the side away from the sun; 427 degrees Celcius on the side facing the sun.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div id="mercury-bio" class="col-12"></div>
+  <footer id="footer" class="container-fluid footer" style="padding: 0;">
+    <div class="row" style="margin: 0; padding: 0;">
+      <div class="col-sm-4 col-xl-3" style="padding: 5px;">
+        <a class="page-scroll footer-link sub-heading" href="index.html">Home</a>
+        <p class="d-none d-sm-block inline-block">
+          Explore the planets of our Solar System
+        </p>
+      </div>
+      <div class="col-sm-4 col-xl-3" style="padding: 5px;">
+        <a class="page-scroll footer-link sub-heading" href="dashboard.html">Dashboard</a>
+        <p class="d-none d-sm-block inline-block">
+          Interact with the planets of our Solar System
+        </p>
+      </div>
+      <div class="col-sm-4 col-xl-3" style="padding: 5px;">
+        <a class="page-scroll footer-link sub-heading" href="mercury.html">Planet Biographies</a>
+        <p class="d-none d-sm-block inline-block">
+          Learn more about the planets of our Solar System
+        </p>
+      </div>
+      <div class="col-xl-3 block" style="padding: 5px;">
+        <ul class="list-inline social-links" style="margin: 0;">
+          <li class="list-inline-item">
+            <a target="_blank" href="https://en-gb.facebook.com/nasasolarsystem/">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://twitter.com/NASASolarSystem">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://www.instagram.com/nasasolarsystem/p/BnkKVbpldA-/">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+          </li>
+          <li class="list-inline-item">
+            <a target="_blank" href="https://www.youtube.com/NASASolarSystem">
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                            <span class="sr-only">YouTube</span>
+                        </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  <!-- <div id="navigation" class="container nav-design">
-        >
-            <ul data-toggle="collapse" data-target=".navbar-collapse.show" style="padding-left: 0; margin-bottom: 0;"><a class="page-scroll navbar-name" href="#home">The Beatles</a></ul>
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item-1 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#about">About</a></li>
-                    <li class="nav-item-2 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#video">Video</a></li>
-                    <li class="nav-item-2 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#music">Music</a></li>
-                    <li class="nav-item-2 mr-2" data-toggle="collapse" data-target=".navbar-collapse.show"><a class="page-scroll nav-link-design" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>-->
+  </footer>
 
 </body>
+
+
 
 </html>

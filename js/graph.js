@@ -67,7 +67,7 @@
     return d;
    })
    .group(moons_dim)
-   .formatNumber(d3.format(".0"));
+   .formatNumber(d3.format(""));
  }
 
  //................................................NUMBERDISPLAY LENGTH OF DAY//
@@ -175,7 +175,7 @@
   var comp_group = composition_dim.group();
 
   dc.pieChart("#planetary-composition")
-   .height(330)
+   .height(220)
    .radius(90)
    .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(composition_dim)
@@ -194,7 +194,7 @@
   var mag_group = magnetic_dim.group();
 
   dc.pieChart("#planetary-magnetic-field")
-   .height(330)
+   .height(220)
    .radius(90)
    .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(magnetic_dim)
@@ -213,7 +213,7 @@
   var spin_group = rotation_dim.group();
 
   dc.pieChart("#planetary-spin-direction")
-   .height(330)
+   .height(220)
    .radius(90)
    .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(rotation_dim)
@@ -232,7 +232,7 @@
   var ring_group = ring_dim.group();
 
   dc.pieChart("#planetary-ring-system")
-   .height(330)
+   .height(220)
    .radius(90)
    .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
    .dimension(ring_dim)
@@ -250,7 +250,7 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.barChart("#planetary-temperature")
-   .width(400)
+   .width(300)
    .height(300)
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
@@ -278,7 +278,7 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.barChart("#orbit-eccentricity")
-   .width(400)
+   .width(300)
    .height(300)
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
@@ -306,7 +306,7 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.barChart("#orbit-inclination")
-   .width(400)
+   .width(300)
    .height(300)
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
@@ -334,10 +334,9 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.rowChart("#planetary-mass")
-   .width(1600)
+   .width(992)
    .height(400)
    .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
-   .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(mass_group)
    .ordering(function(d) {
@@ -358,10 +357,9 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.rowChart("#distance-from-sun")
-   .width(1600)
+   .width(992)
    .height(400)
    .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
-   .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(distance_group)
    .ordering(function(d) {
@@ -389,7 +387,7 @@
   var maxGravity = gravity_dim.top(1)[0].gravity;
 
   dc.scatterPlot("#planetary-mass-gravity-relationship")
-   .width(800)
+   .width(450)
    .height(400)
    .x(d3.scale.linear().domain([0, maxMass]))
    .y(d3.scale.linear().domain([0, maxGravity]))
@@ -422,7 +420,7 @@
   var maxGravity = gravity_dim.top(1)[0].gravity;
 
   dc.scatterPlot("#planetary-gravity-density-relationship")
-   .width(800)
+   .width(450)
    .height(400)
    .x(d3.scale.linear().domain([0, maxDensity]))
    .y(d3.scale.linear().domain([0, maxGravity]))
@@ -452,7 +450,7 @@
   var maxVelocity = velocity_dim.top(1)[0].orbitalVelocity;
 
   dc.scatterPlot("#planetary-distance-velocity-relationship")
-   .width(800)
+   .width(450)
    .height(400)
    .x(d3.scale.linear().domain([0, maxDistance]))
    .y(d3.scale.linear().domain([0, maxVelocity]))
@@ -483,7 +481,7 @@
   var maxPeriod = period_dim.top(1)[0].orbitalPeriod;
 
   dc.scatterPlot("#planetary-distance-orbitalperiod-relationship")
-   .width(800)
+   .width(450)
    .height(400)
    .x(d3.scale.linear().domain([0, maxDistance]))
    .y(d3.scale.linear().domain([0, maxPeriod]))
@@ -514,7 +512,7 @@
   var maxPeriod = period_dim.top(1)[0].orbitalPeriod;
 
   dc.scatterPlot("#planetary-orbitalvelocity-orbitalperiod-relationship")
-   .width(800)
+   .width(450)
    .height(400)
    .x(d3.scale.linear().domain([0, maxVelocity]))
    .y(d3.scale.linear().domain([0, maxPeriod]))
@@ -545,7 +543,7 @@
   var maxGravity = gravity_dim.top(1)[0].gravity;
 
   dc.scatterPlot("#planetary-gravity-escapevelocity-relationship")
-   .width(800)
+   .width(450)
    .height(400)
    .x(d3.scale.linear().domain([0, maxGravity]))
    .y(d3.scale.linear().domain([0, maxVelocity]))
@@ -561,4 +559,5 @@
    .group(gravityEscapeGroup)
    .margins({ top: 10, right: 50, bottom: 75, left: 75 });
  }
+ 
  

@@ -9,8 +9,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dc/3.1.5/dc.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 
     <script type="text/javascript" src="js/d3.min.js"></script>
@@ -23,102 +23,197 @@
 <body>
 
     <!----------------------------------------------------------------------------------------------------------NAVBAR-->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">The Planets</a>
+
+    <!----------------------------------------------------------------------------------------------------------DASHBOARD-->
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="section-heading">Select Planet</h3>
+                        <div id="planet-selector"></div>
+                    </div>
+                </div>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="dashboard.html">Dashboard</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="mercury.html">Planet Biographies
-        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li class="divider"><a href="mercury.html">Mercury</a></li>
-                        <li><a href="#">Venus</a></li>
-                        <li><a href="#">Earth</a></li>
-                        <li><a href="#">Mars</a></li>
-                        <li><a href="#">Jupiter</a></li>
-                        <li><a href="#">Saturn</a></li>
-                        <li><a href="#">Uranus</a></li>
-                        <li><a href="#">Neptune</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!----------------------------------------------------------------------------------------------------------NAVBAR-->
+        </section>
 
-    <div id="row">
-        <h1>The Planets</h1>
-        <div class="col-xs-12 col-sm-12" id="planet-selector"></div>
-    </div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Solar system / Planetary number of moons.</p>
+                        <div class="row">
+                            <div class="col-xs-12"><i aria-hidden="true"></i> <span class="number-box" id="number-of-moons"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Solar system / Planetary average length of day (Hours).</p>
+                        <div class="row">
+                            <div class="col-xs-12"><i aria-hidden="true"></i> <span class="number-box" id="length-of-day"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Solar system / Planetary average time to rotate (Hours).</p>
+                        <div class="row">
+                            <div class="col-xs-12"><i aria-hidden="true"></i> <span class="number-box" id="rotation-period"></span></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Solar system / Planetary average time to orbit the sun (Days).</p>
+                        <div class="row">
+                            <div class="col-xs-12"> <i aria-hidden="true"></i> <span class="number-box" id="orbital-period"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-lg-3">
-            <i aria-hidden="true"></i> <span class="number-box" id="number-of-moons"></span>
-            <i aria-hidden="true"></i> <span class="number-box" id="length-of-day"></span>
-            <i aria-hidden="true"></i> <span class="number-box" id="rotation-period"></span>
-            <i aria-hidden="true"></i> <span class="number-box" id="orbital-period"></span>
-        </div>
-    </div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Planetary composition distribution.</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="planetary-composition"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Planetary magnetic field distribution.</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="planetary-magnetic-field"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">Planetary direction of spin distribution.</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="planetary-spin-direction"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 text-center">
+                        <p class="section-paragraph">lanetary ring system distribution.</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="planetary-ring-system"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="row">
-        <div class="col-12-sm col-6-md col-3-xl" id="planetary-composition"></div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-4 text-center">
+                        <p class="section-paragraph">Average planetary temperature.</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="planetary-temperature"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 text-center">
+                        <p class="section-paragraph">Average eccentricity of planetary orbit
+                            <br> (Value of 0 indicates a perfect circle).</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="orbit-eccentricity"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 text-center">
+                        <p class="section-paragraph">Average inclination of planetary orbit in relation to Earth's.</p>
+                        <div class="row">
+                            <div class="col-xs-12" id="orbit-inclination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="col-12-sm col-6-md col-3-xl" id="planetary-magnetic-field"></div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 text-center">
+                        <p class="section-paragraph">Mass of the planets within the Solar system.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="planetary-mass"></div>
+                </div>
+            </div>
+        </section>
 
-        <div class="col-12-sm col-6-md col-3-xl" id="planetary-spin-direction"></div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 text-center">
+                        <p class="section-paragraph">Average distance at which each planet orbits the sun.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" id="distance-from-sun"></div>
+                </div>
+            </div>
+        </section>
 
-        <div class="col-12-sm col-6-md col-3-xl" id="planetary-ring-system"></div>
-    </div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <p class="section-paragraph">heading for scatter 1</p>
+                        <div class="row">
+                            <!--Pearson's r for mass-gravity relationship within our solar system is 0.894-->
+                            <div class="col-xs-12" id="planetary-mass-gravity-relationship"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <p class="section-paragraph">heading for scatter 2</p>
+                        <div class="row">
+                            <!--Pearson's r for density-gravity relationship within our solar system is -0.479-->
+                            <div class="col-xs-12" id="planetary-gravity-density-relationship"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="row">
-        
-        <div id="planetary-temperature"></div>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <p class="section-paragraph">heading for scatter 3</p>
+                        <div class="row">
+                            <!--Pearson's r for distanceFromSun-orbitalVelocity within our solar system is -0.768-->
+                            <div class="col-xs-12" id="planetary-distance-velocity-relationship"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <p class="section-paragraph">heading for scatter 4</p>
+                        <div class="row">
+                            <!--Pearson's r for distanceFromSun-orbitalPeriod within our solar system is -0.988-->
+                            <div class="col-xs-12" id="planetary-distance-orbitalperiod-relationship"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div id="orbit-eccentricity"></div>
-
-        <div id="orbit-inclination"></div>
-
-    </div>
-    
-    <div class="row">
-        <div id="planetary-mass"></div>
-    </div>
-
-    <div class="row">
-        <div id="distance-from-sun"></div>
-    </div>
-
-    <div class="row">
-        <!--Pearson's r for mass-gravity relationship within our solar system is 0.894-->
-        <div id="planetary-mass-gravity-relationship"></div>
-
-        <!--Pearson's r for density-gravity relationship within our solar system is -0.479-->
-        <div id="planetary-gravity-density-relationship"></div>
-    </div>
-
-    <div class="row">
-        <!--Pearson's r for distanceFromSun-orbitalVelocity within our solar system is -0.768-->
-        <div id="planetary-distance-velocity-relationship"></div>
-
-        <!--Pearson's r for distanceFromSun-orbitalPeriod within our solar system is -0.988-->
-        <div id="planetary-distance-orbitalperiod-relationship"></div>
-    </div>
-
-    <div class="row">
-        <!--Pearson's r for orbitalVelocity-orbitalPeriod within our solar system is -0.683. Exponential increase indicative of doubling of distance of planets from sun-->
-        <div id="planetary-orbitalvelocity-orbitalperiod-relationship"></div>
-
-        <!--Pearson's r for orbitalVelocity-orbitalPeriod within our solar system is -0.902-->
-        <div id="planetary-gravity-escapevelocity-relationship"></div>
-    </div>
-
-
-
-
-
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <p class="section-paragraph">heading for scatter 5</p>
+                        <div class="row">
+                            <!--Pearson's r for orbitalVelocity-orbitalPeriod within our solar system is -0.683. Exponential increase indicative of doubling of distance of planets from sun-->
+                            <div class="col-xs-12" id="planetary-orbitalvelocity-orbitalperiod-relationship"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 text-center">
+                        <p class="section-paragraph">heading for scatter 6</p>
+                        <div class="row">
+                            <!--Pearson's r for orbitalVelocity-orbitalPeriod within our solar system is -0.902-->
+                            <div class="col-xs-12" id="planetary-gravity-escapevelocity-relationship"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
