@@ -44,7 +44,6 @@
 
   dc.renderAll();
  }
-
  //................................................DROPDOWN PLANET SELECTOR//
 
  function show_planet_selector(ndx) {
