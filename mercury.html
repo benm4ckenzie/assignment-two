@@ -2,48 +2,46 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Planets</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
+  <title>The Planets</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-  <script type="text/javascript" src="js/d3.min.js"></script>
-  <script type="text/javascript" src="js/crossfilter.min.js"></script>
-  <script type="text/javascript" src="js/dc.min.js"></script>
-  <script type="text/javascript" src="js/queue.min.js"></script>
-  <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/graph.js"></script>
 </head>
 
 <body>
-  
-  <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="index.html">The Planets</a>
+
+  <nav id="navbar" class="navbar navbar-expand-md navbar-dark" style="padding: 0px 10px;">
+    <a class="navbar-links" href="index.html">The Planets</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
     <div class="collapse navbar-collapse" id="collapsingNavbar">
       <ul class="nav navbar-nav ml-auto">
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <div class="dropdown">
-          <button class="dropbtn">Select a planet</button>
-          <div class="dropdown-content">
-            <a class="active" href="mercury.html">Mercury</a>
+        <li><a class="navbar-links" href="dashboard.html" style="padding: 0px 10px;">Dashboard</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle navbar-links active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="padding: 0px 10px;">
+          Planet Biographies
+        </a>
+          <div class="dropdown-menu navbar-content navbar-links dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a href="mercury.html">Mercury</a>
             <a href="venus.html">Venus</a>
             <a href="earth.html">Earth</a>
-            <a href="earth.html">Mars</a>
-            <a href="earth.html">Jupiter</a>
-            <a href="earth.html">Saturn</a>
-            <a href="earth.html">Uranus</a>
-            <a href="earth.html"></a>
+            <a href="mars.html">Mars</a>
+            <a href="jupiter.html">Jupiter</a>
+            <a href="saturn.html">Saturn</a>
+            <a href="uranus.html">Uranus</a>
+            <a href="neptune.html">Neptune</a>
           </div>
-        </div>
+        </li>
       </ul>
     </div>
   </nav>
@@ -53,20 +51,23 @@
       <div class="col-12 mercury-bg planet-cont">
         <div class="row planet-box">
           <div class="col-xs-12 bio-text bio-text-pos">
-            <p class="planet-header">Mercury</p>
+            <p class="planet-title">Mercury
+            </p>
             <p class="bio-para">
-              <br>Sun-scorched Mercury, the smallest planet in our solar system, is only slightly larger than Earth's moon. Like the moon, Mercury has very little atmosphere to stop impacts and it is covered with craters. Mercury's dayside is super-heated
-              by the sun, but at night temperatures drop hundreds of degrees below freezing. Ice may even exist in craters.
+              <br>The smallest planet in our solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. From the surface of Mercury, the Sun would appear more than three times as large as it does when viewed from Earth, and
+              the sunlight would be as much as seven times brighter. Despite its proximity to the Sun, Mercury is not the hottest planet in our solar system – that title belongs to nearby Venus, thanks to its dense atmosphere. But Mercury is the fastest
+              planet, zipping around the Sun every 88 Earth days. Mercury is appropriately named for the swiftest of the ancient Roman gods.
               <br>
-              <br> Distance from the sun: About 58 million km, slightly more than 1/3 as far as the Earth.
+              <br>Distance from the sun: About 58 million km, slightly more than 1/3 as far as the Earth.
               <br>
-              <br> Year: About 88 Earth days.
+              <br>Year: About 88 Earth days.
               <br>
-              <br> Day: About 59 Earth days.
+              <br>Day: About 59 Earth days.
               <br>
-              <br> Diameter: 4879 km, less than half of Earth's.
+              <br>Diameter: 4879 km, less than half of Earth's.
               <br>
-              <br> Temperatures: -173 degrees Celcius on the side away from the sun; 427 degrees Celcius on the side facing the sun.</p>
+              <br>Temperatures: -173 degrees Celcius on the side away from the sun; 427 degrees Celcius on the side facing the sun.
+            </p>
           </div>
         </div>
       </div>
@@ -93,7 +94,7 @@
           Learn more about the planets of our Solar System
         </p>
       </div>
-      <div class="col-xl-3 block" style="padding: 5px;">
+      <div class="col-xl-3 inline-block" style="padding: 5px;">
         <ul class="list-inline social-links" style="margin: 0;">
           <li class="list-inline-item">
             <a target="_blank" href="https://en-gb.facebook.com/nasasolarsystem/">
@@ -124,6 +125,15 @@
     </div>
 
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/d3.min.js"></script>
+  <script type="text/javascript" src="js/crossfilter.min.js"></script>
+  <script type="text/javascript" src="js/dc.min.js"></script>
+  <script type="text/javascript" src="js/queue.min.js"></script>
+  <script type="text/javascript" src="js/graph.js"></script>
 
 </body>
 
