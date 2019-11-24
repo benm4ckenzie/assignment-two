@@ -272,6 +272,10 @@
   var name_dim = ndx.dimension(dc.pluck('name'));
   var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalEccentricity'));
 
+  var planetColours = d3.scale.ordinal()
+   .domain(["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"])
+   .range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]);
+
   var order = d3.scale.ordinal()
    .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
@@ -284,6 +288,9 @@
    .group(planetary_temp)
    .ordering(function(d) {
     return order(d.key);
+   })
+   .colors(function(d) {
+    return planetColours(d.key);
    })
    .transitionDuration(500)
    .x(d3.scale.ordinal())
@@ -377,7 +384,7 @@
    return [d.mass, d.gravity, d.name];
   });
   var gravityMassGroup = massDim.group();
-  
+
   var myColours = d3.scale.ordinal()
    .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
    .range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]);
@@ -558,5 +565,4 @@
    .group(gravityEscapeGroup)
    .margins({ top: 10, right: 50, bottom: 75, left: 75 });
  }
- 
  

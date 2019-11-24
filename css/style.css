@@ -203,41 +203,45 @@ a:hover {
 
 main {
     color: #ffffff;
-    background: #808080;
+    background: #000000;
 }
 
 .section-heading {
-   display: inline;
-   position: relative;
-   text-align: center;
-}
-
-.section-heading {
-    margin-bottom: 50px;
-}
-
-#planet-selector {
-    margin-left: 0px;
-}
-
-.section {
-    padding-top: 65px;
-}
-
-.row {
-    margin: 15px;
-}
-
-.number-box {
-    margin-right: 10px;
+    line-height: 1.3;
+    position: relative;
     text-align: center;
 }
 
-.section-paragraph {
-    line-height: 1.3;
+.section-top {
+    padding-top: 40px;
 }
 
+.section {
+    padding-top: 100px;
+}
 
+.row {
+    margin: 0;
+}
+
+.number-box {
+    margin: 0;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    height: auto;
+}
+
+.section-paragraph {
+    height: 60px;
+    line-height: 1.2;
+    font-size: x-large;
+}
+
+.axis-detail {
+    width: 100vw;
+    fill: #ffffff;
+}
 
 /*.................................................................PLANET BIO'S*/
 
@@ -494,13 +498,13 @@ footer p {
 }
 
 @media(max-width:991px) {
-    
+
     .navbar-links {
         font-size: x-large;
     }
-    
+
     .navbar-content a {
-    font-size: x-large;
+        font-size: x-large;
     }
 
     .bio-text {
@@ -535,13 +539,13 @@ footer p {
 
 
 @media(max-width:576px) {
-    
+
     .navbar-links {
         font-size: large;
     }
-    
-     .navbar-content a {
-    font-size: large;
+
+    .navbar-content a {
+        font-size: large;
     }
 
     .bio-text {
