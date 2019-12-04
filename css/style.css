@@ -1,7 +1,7 @@
 /*.................................................................HOMEPAGE*/
 
 body {
-    font-family: 'Amatic SC', cursive;
+    font-family: 'Nanum Myeongjo', serif;
 }
 
 /*...........................................background*/
@@ -40,7 +40,7 @@ body {
 .callout-text {
     color: #F8F8FF;
     font-weight: bold;
-    font-size: 70px;
+    font-size: 50px;
     text-align: right;
 }
 
@@ -146,6 +146,10 @@ a:hover {
     color: #808080;
 }
 
+.navbar-collapse {
+    background-color: #000000;
+}
+
 .navbar-content {
     font-size: xx-large;
     display: none;
@@ -206,18 +210,33 @@ main {
     background: #000000;
 }
 
+.heading-container {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
 .section-heading {
-    line-height: 1.3;
     position: relative;
     text-align: center;
+    font-size: x-large;
+    margin-top: 30px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.section-intro {
+    position: relative;
+    text-align: center;
+    font-size: large;
 }
 
 .section-top {
-    padding-top: 40px;
+    padding-top: 50px;
 }
 
 .section {
-    padding-top: 100px;
+    padding-top: 75px;
 }
 
 .row {
@@ -227,21 +246,90 @@ main {
 .number-box {
     margin: 0;
     text-align: center;
-    font-size: 60px;
+    font-size: xx-large;
     font-weight: bold;
     height: auto;
 }
 
 .section-paragraph {
-    height: 60px;
-    line-height: 1.2;
-    font-size: x-large;
+    font-size: large;
+    vertical-align: central;
+    padding-top: 40px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.section-sub-paragraph {
+    font-size: medium;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .axis-detail {
-    width: 100vw;
     fill: #ffffff;
+    font-size: small;
+    text-align: center;
+    height: 90%;
+    width: 100%;
 }
+
+.planet-colour rect {
+    transition: all 0.3s ease-in-out;
+}
+
+.text-graph-sep {
+    margin-top: 30px;
+}
+
+
+/*Earth*/
+
+.planet-colour rect:nth-child(1) {
+    fill: #739FEE;
+}
+
+/*Jupiter*/
+
+.planet-colour rect:nth-child(2) {
+    fill: #FFA332;
+}
+
+/*Mars*/
+
+.planet-colour rect:nth-child(3) {
+    fill: #B85B1A;
+}
+
+/*Mercury*/
+
+.planet-colour rect:nth-child(4) {
+    fill: #808080;
+}
+
+/*Neptune*/
+
+.planet-colour rect:nth-child(5) {
+    fill: #5077BD;
+}
+
+/*Saturn*/
+
+.planet-colour rect:nth-child(6) {
+    fill: #D6BFA4;
+}
+
+/*Uranus*/
+
+.planet-colour rect:nth-child(7) {
+    fill: #E5FFF6;
+}
+
+/*Venus*/
+
+.planet-colour rect:nth-child(8) {
+    fill: #E1D3C1;
+}
+
 
 /*.................................................................PLANET BIO'S*/
 
@@ -483,6 +571,14 @@ footer p {
 /*.................................................................MEDIA*/
 
 @media(max-width:1199px) {
+    
+    .navbar-links {
+        font-size: x-large;
+    }
+
+    .navbar-content a {
+        font-size: x-large;
+    }
 
     .sub-heading {
         font-size: large;
@@ -495,6 +591,55 @@ footer p {
     .social-links {
         line-height: 0;
     }
+
+    .section-heading {
+        font-size: x-large;
+        margin-top: 20px;
+    }
+
+    .section-intro {
+        font-size: large;
+    }
+
+    .section-paragraph {
+        font-size: large;
+        vertical-align: central;
+        padding-top: 30px;
+        margin: 0;
+    }
+
+    .section-sub-paragraph {
+        font-size: medium;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section {
+        padding-top: 60px;
+    }
+
+    .heading-container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .pie-padding {
+       Margin: 20, 5, 5;
+       padding: 0;
+    }
+
+    .axis-detail {
+        font-size: small;
+    }
+
+    .row-height {
+        height: 50px;
+        padding-bottom: 40px;
+    }
+    
+      .text-graph-sep {
+    margin-top: 20px;
+}
 }
 
 @media(max-width:991px) {
@@ -534,9 +679,55 @@ footer p {
         line-height: 30px;
     }
 
+    .section-heading {
+        font-size: large;
+        margin-top: 20px;
+    }
 
+    .section-intro {
+        font-size: medium;
+    }
+
+    .section-paragraph {
+        font-size: medium;
+        vertical-align: central;
+        padding-top: 20px;
+        margin: 0;
+    }
+
+    .section-sub-paragraph {
+        font-size: small;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .section {
+        padding-top: 45px;
+    }
+
+    .heading-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .pie-padding {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .axis-detail {
+        font-size: x-small;
+    }
+
+    .row-height {
+        height: 40px;
+        padding-bottom: 30px;
+    }
+    
+    .text-graph-sep {
+    margin-top: 10px;
 }
-
+}
 
 @media(max-width:576px) {
 
@@ -571,7 +762,56 @@ footer p {
         font-size: small;
     }
 
+    .section {
+        padding-top: 30px;
+    }
 
+    .heading-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
+    .section-heading {
+        margin-top: 10px;
+    }
 
+    .pie-padding {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .axis-detail {
+        font-size: xx-small;
+    }
+
+    .section-paragraph {
+        font-size: small;
+        vertical-align: central;
+        padding-top: 10px;
+        margin: 0;
+    }
+
+    .section-sub-paragraph {
+        font-size: x-small;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .row-height {
+        height: 30px;
+        padding-bottom: 20px;
+    }
+    
+     .section-heading {
+        font-size: medium;
+        margin-top: 20px;
+    }
+
+    .section-intro {
+        font-size: small;
+    }
+    
+    .text-graph-sep {
+    margin-top: 0px;
+}
 }

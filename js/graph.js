@@ -167,19 +167,22 @@
  function show_planet_composition(ndx) {
   var composition_dim = ndx.dimension(function(d) {
    if (d.composition === "Rock")
-    return "Rock composition";
+    return "Rock";
    else
-    return "Gas composition";
+    return "Gas";
   });
+
   var comp_group = composition_dim.group();
 
   dc.pieChart("#planetary-composition")
-   .height(220)
-   .radius(90)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+
+   .colors(d3.scale.ordinal().range(["#EE7600", "#FFB90F"]))
+   .radius(70)
    .dimension(composition_dim)
-   .group(comp_group);
+   .group(comp_group)
  }
+
+
 
  //................................................PIECHART GLOBAL MAGNETIC FIELD//
 
@@ -193,9 +196,9 @@
   var mag_group = magnetic_dim.group();
 
   dc.pieChart("#planetary-magnetic-field")
-   .height(220)
-   .radius(90)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+
+   .colors(d3.scale.ordinal().range(["#EE7600", "#FFB90F"]))
+   .radius(70)
    .dimension(magnetic_dim)
    .group(mag_group);
  }
@@ -212,9 +215,9 @@
   var spin_group = rotation_dim.group();
 
   dc.pieChart("#planetary-spin-direction")
-   .height(220)
-   .radius(90)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+ 
+   .colors(d3.scale.ordinal().range(["#EE7600", "#FFB90F"]))
+   .radius(70)
    .dimension(rotation_dim)
    .group(spin_group);
  }
@@ -224,16 +227,16 @@
  function show_planet_ring_system(ndx) {
   var ring_dim = ndx.dimension(function(d) {
    if (d.ringSystem === "Yes")
-    return "Ring system";
+    return "Rings";
    else
-    return "No ring system";
+    return "No rings";
   });
   var ring_group = ring_dim.group();
 
   dc.pieChart("#planetary-ring-system")
-   .height(220)
-   .radius(90)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+
+   .colors(d3.scale.ordinal().range(["#EE7600", "#FFB90F"]))
+   .radius(70)
    .dimension(ring_dim)
    .group(ring_group);
  }
@@ -244,45 +247,15 @@
   var name_dim = ndx.dimension(dc.pluck('name'));
   var planetary_temp = name_dim.group().reduceSum(dc.pluck('meanTemperature'));
 
+  var planetColours = d3.scale.ordinal()
+   .domain(["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"])
+   .range(["#808080", "#FFDFE5", "#3232FF", "#620000", "#FFA500", "#CCAC00", "#66E4FF", "#40198C"]);
+
   var order = d3.scale.ordinal()
    .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.barChart("#planetary-temperature")
-   .width(300)
-   .height(300)
-   .margins({ top: 10, right: 50, bottom: 30, left: 50 })
-   .dimension(name_dim)
-   .group(planetary_temp)
-   .ordering(function(d) {
-    return order(d.key);
-   })
-   .transitionDuration(500)
-   .x(d3.scale.ordinal())
-   .xUnits(dc.units.ordinal)
-   .elasticY(false)
-   .xAxisLabel("Planet")
-   .yAxisLabel("Mean temperature (Degrees Celcius)")
-   .yAxis().ticks(10);
- }
-
- //................................................BARCHART ORBIT ECCENTRICITY//
-
- function show_orbit_eccentricity(ndx) {
-  var name_dim = ndx.dimension(dc.pluck('name'));
-  var planetary_temp = name_dim.group().reduceSum(dc.pluck('orbitalEccentricity'));
-
-  var planetColours = d3.scale.ordinal()
-   .domain(["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"])
-   .range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]);
-
-  var order = d3.scale.ordinal()
-   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
-   .range([0, 1, 2, 3, 4, 5, 6, 7]);
-
-  dc.barChart("#orbit-eccentricity")
-   .width(300)
-   .height(300)
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
@@ -296,9 +269,41 @@
    .x(d3.scale.ordinal())
    .xUnits(dc.units.ordinal)
    .elasticY(false)
-   .xAxisLabel("Planet")
-   .yAxisLabel("Orbit eccentricity (??????)")
-   .yAxis().ticks(10);
+   .yAxisLabel("Degrees Celcius")
+   .yAxis().ticks(5);
+ }
+
+
+
+ //................................................BARCHART ORBIT ECCENTRICITY//
+
+ function show_orbit_eccentricity(ndx) {
+  var name_dim = ndx.dimension(dc.pluck('name'));
+  var planetary_ecc = name_dim.group().reduceSum(dc.pluck('orbitalEccentricity'));
+
+  var planetColours = d3.scale.ordinal()
+   .domain(["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"])
+   .range(["#808080", "#FFDFE5", "#3232FF", "#620000", "#FFA500", "#CCAC00", "#66E4FF", "#40198C"]);
+
+  var order = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range([0, 1, 2, 3, 4, 5, 6, 7]);
+
+  dc.barChart("#orbit-eccentricity")
+   .margins({ top: 10, right: 50, bottom: 30, left: 50 })
+   .dimension(name_dim)
+   .group(planetary_ecc)
+   .ordering(function(d) {
+    return order(d.key);
+   })
+   .colors(function(d) {
+    return planetColours(d.key);
+   })
+   .transitionDuration(500)
+   .x(d3.scale.ordinal())
+   .xUnits(dc.units.ordinal)
+   .elasticY(false)
+   .yAxis().ticks(5);
  }
 
  //................................................BARCHART ORBIT INCLINATION//
@@ -312,8 +317,6 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.barChart("#orbit-inclination")
-   .width(300)
-   .height(300)
    .margins({ top: 10, right: 50, bottom: 30, left: 50 })
    .dimension(name_dim)
    .group(planetary_temp)
@@ -324,8 +327,7 @@
    })
    .xUnits(dc.units.ordinal)
    .elasticY(false)
-   .xAxisLabel("Planet")
-   .yAxisLabel("Orbit inclination (degrees)")
+   .yAxisLabel("Degrees")
    .yAxis().ticks(10);
  }
 
@@ -340,16 +342,15 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.rowChart("#planetary-mass")
-   .width(992)
-   .height(400)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+   .colors(d3.scale.ordinal().range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]))
    .dimension(name_dim)
    .group(mass_group)
    .ordering(function(d) {
     return order(d.key);
    })
    .transitionDuration(500)
-   .elasticX(false);
+   .elasticX(false)
+   .xAxis().ticks(5);
  }
 
  //................................................ROWCHART DISTANCE FROM SUN//
@@ -363,16 +364,15 @@
    .range([0, 1, 2, 3, 4, 5, 6, 7]);
 
   dc.rowChart("#distance-from-sun")
-   .width(992)
-   .height(400)
-   .colors(d3.scale.ordinal().range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]))
+   .colors(d3.scale.ordinal().range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]))
    .dimension(name_dim)
    .group(distance_group)
    .ordering(function(d) {
     return order(d.key);
    })
    .transitionDuration(500)
-   .elasticX(false);
+   .elasticX(false)
+   .xAxis().ticks(5);
  }
 
  //................................................SCATTERPLOT MASS / GRAVITY RELATIONSHIP//
@@ -385,31 +385,34 @@
   });
   var gravityMassGroup = massDim.group();
 
-  var myColours = d3.scale.ordinal()
+  var planetColors = d3.scale.ordinal()
    .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
-   .range(["#FF3333", "#FF9933", "#FFFF33", "#33FF33", "#33FFFF", "#3333FF", "#FF33FF", "#A0A0A0"]);
+   .range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]);
 
   var maxMass = mass_dim.top(1)[0].mass;
   var maxGravity = gravity_dim.top(1)[0].gravity;
 
   dc.scatterPlot("#planetary-mass-gravity-relationship")
-   .width(450)
-   .height(400)
    .x(d3.scale.linear().domain([0, maxMass]))
    .y(d3.scale.linear().domain([0, maxGravity]))
    .brushOn(false)
    .symbolSize(8)
    .clipPadding(10)
-   .yAxisLabel("Gravity (m / s^2)")
+   .yAxisLabel("m / s^2")
+   .xAxisLabel("x 10^24 kg")
    .title(function(d) {
     return d.key[2] + " has a mass of " + d.key[0] + " x 10^24 kg and a gravitational pull equating to " + d.key[1] + " m / s^2.";
    })
-   .colors(function(d) {
-    return myColours(d);
+   .colorAccessor(function(d) {
+    return d.key[2];
    })
+   .colors(planetColors)
+   .elasticX(false)
+   .elasticY(false)
+
    .dimension(massDim)
    .group(gravityMassGroup)
-   .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+   .margins({ top: 10, right: 25, bottom: 50, left: 70 });
  }
 
  //................................................SCATTERPLOT DENSITY / GRAVITY RELATIONSHIP//
@@ -422,24 +425,31 @@
   });
   var densityGravityGroup = densityDim.group();
 
+  var planetColors = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]);
+
   var maxDensity = density_dim.top(1)[0].density;
   var maxGravity = gravity_dim.top(1)[0].gravity;
 
   dc.scatterPlot("#planetary-gravity-density-relationship")
-   .width(450)
-   .height(400)
    .x(d3.scale.linear().domain([0, maxDensity]))
    .y(d3.scale.linear().domain([0, maxGravity]))
    .brushOn(false)
    .symbolSize(8)
    .clipPadding(10)
-   .yAxisLabel("Gravity (m / s^2)")
+   .yAxisLabel("m / s^2")
+   .xAxisLabel("kg / m^3")
    .title(function(d) {
     return d.key[2] + " has a mass of " + d.key[0] + " x 10^24 kg and a gravitational pull equating to " + d.key[1] + " m / s^2.";
    })
+   .colorAccessor(function(d) {
+    return d.key[2];
+   })
+   .colors(planetColors)
    .dimension(densityDim)
    .group(densityGravityGroup)
-   .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+   .margins({ top: 10, right: 25, bottom: 50, left: 70 });
  }
 
  //................................................SCATTERPLOT DISTANCE FROM SUN / ORBITAL VELOCITY RELATIONSHIP//
@@ -452,25 +462,31 @@
   });
   var distanceVelocityGroup = velocityDim.group();
 
+  var planetColors = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]);
+
   var maxDistance = distance_dim.top(1)[0].distanceFromSun;
   var maxVelocity = velocity_dim.top(1)[0].orbitalVelocity;
 
   dc.scatterPlot("#planetary-distance-velocity-relationship")
-   .width(450)
-   .height(400)
    .x(d3.scale.linear().domain([0, maxDistance]))
    .y(d3.scale.linear().domain([0, maxVelocity]))
    .brushOn(false)
    .symbolSize(8)
    .clipPadding(10)
-   .yAxisLabel("Orbital velocity (km / s)")
-   .xAxisLabel("Distance from the sun (x 10^6 km)")
+   .yAxisLabel("km / s")
+   .xAxisLabel("x 10^6 km")
    .title(function(d) {
     return d.key[2] + " has an orbital velocity of  " + d.key[1] + " km / s at a distance of " + d.key[0] + " x 10^6 km from the sun.";
    })
+   .colorAccessor(function(d) {
+    return d.key[2];
+   })
+   .colors(planetColors)
    .dimension(velocityDim)
    .group(distanceVelocityGroup)
-   .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+   .margins({ top: 10, right: 25, bottom: 50, left: 70 });
  }
 
  //................................................SCATTERPLOT DISTANCE FROM SUN / ORBITAL PERIOD RELATIONSHIP//
@@ -483,25 +499,31 @@
   });
   var distancePeriodGroup = periodDim.group();
 
+  var planetColors = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]);
+
   var maxDistance = distance_dim.top(1)[0].distanceFromSun;
   var maxPeriod = period_dim.top(1)[0].orbitalPeriod;
 
   dc.scatterPlot("#planetary-distance-orbitalperiod-relationship")
-   .width(450)
-   .height(400)
    .x(d3.scale.linear().domain([0, maxDistance]))
    .y(d3.scale.linear().domain([0, maxPeriod]))
    .brushOn(false)
    .symbolSize(8)
    .clipPadding(10)
-   .yAxisLabel("Orbital period (Days)")
-   .xAxisLabel("Distance from the sun (x 10^6 km)")
+   .yAxisLabel("Days")
+   .xAxisLabel("x 10^6 km")
    .title(function(d) {
     return d.key[2] + " has an orbital period of  " + d.key[1] + " days at a distance of " + d.key[0] + " x 10^6 km from the sun.";
    })
+   .colorAccessor(function(d) {
+    return d.key[2];
+   })
+   .colors(planetColors)
    .dimension(periodDim)
    .group(distancePeriodGroup)
-   .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+   .margins({ top: 10, right: 25, bottom: 50, left: 70 });
  }
 
  //................................................SCATTERPLOT ORBITAL PERIOD / ORBITAL VELOCITY RELATIONSHIP//
@@ -514,25 +536,31 @@
   });
   var velocityPeriodGroup = periodDim.group();
 
+  var planetColors = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]);
+
   var maxVelocity = velocity_dim.top(1)[0].orbitalVelocity;
   var maxPeriod = period_dim.top(1)[0].orbitalPeriod;
 
   dc.scatterPlot("#planetary-orbitalvelocity-orbitalperiod-relationship")
-   .width(450)
-   .height(400)
    .x(d3.scale.linear().domain([0, maxVelocity]))
    .y(d3.scale.linear().domain([0, maxPeriod]))
    .brushOn(false)
    .symbolSize(8)
    .clipPadding(10)
-   .yAxisLabel("Orbital period (Days)")
-   .xAxisLabel("Orbital velocity (km / s)")
+   .yAxisLabel("Days")
+   .xAxisLabel("km / s")
    .title(function(d) {
     return d.key[2] + " has an orbital period of " + d.key[1] + " days and an orbital velocity of " + d.key[0] + " km / s.";
    })
+   .colorAccessor(function(d) {
+    return d.key[2];
+   })
+   .colors(planetColors)
    .dimension(periodDim)
    .group(velocityPeriodGroup)
-   .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+   .margins({ top: 10, right: 25, bottom: 50, left: 70 });
  }
 
  //................................................SCATTERPLOT GRAVITY / ESCAPE VELOCITY RELATIONSHIP//
@@ -545,24 +573,31 @@
   });
   var gravityEscapeGroup = escapeDim.group();
 
+  var planetColors = d3.scale.ordinal()
+   .domain(['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'])
+   .range(["#808080", "#E1D3C1", "#739FEE", "#B85B1A", "#FFA332", "#D6BFA4", "#E5FFF6", "#5077BD"]);
+
   var maxVelocity = velocity_dim.top(1)[0].escapeVelocity;
   var maxGravity = gravity_dim.top(1)[0].gravity;
 
   dc.scatterPlot("#planetary-gravity-escapevelocity-relationship")
-   .width(450)
-   .height(400)
    .x(d3.scale.linear().domain([0, maxGravity]))
    .y(d3.scale.linear().domain([0, maxVelocity]))
    .brushOn(false)
    .symbolSize(8)
    .clipPadding(10)
-   .yAxisLabel("Escape velocity (km / s)")
-   .xAxisLabel("Gravity (m / s^2)")
+   .yAxisLabel("km / s")
+   .xAxisLabel("m / s^2")
    .title(function(d) {
     return d.key[2] + " has a gravitational pull equating to " + d.key[0] + " m / s^2 that requires an escape velocity of " + d.key[1] + " km / s.";
    })
+   .colorAccessor(function(d) {
+    return d.key[2];
+   })
+   .colors(planetColors)
    .dimension(escapeDim)
    .group(gravityEscapeGroup)
-   .margins({ top: 10, right: 50, bottom: 75, left: 75 });
+
+   .margins({ top: 10, right: 25, bottom: 50, left: 70 });
  }
  
