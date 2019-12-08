@@ -341,7 +341,7 @@ main {
 
 .bio-text-pos {
     position: fixed;
-    bottom: 15%;
+    bottom: 18%;
     left: 5%;
     right: 5%;
 }
@@ -571,7 +571,7 @@ footer p {
 /*.................................................................MEDIA*/
 
 @media(max-width:1199px) {
-    
+
     .navbar-links {
         font-size: x-large;
     }
@@ -624,8 +624,8 @@ footer p {
     }
 
     .pie-padding {
-       Margin: 20, 5, 5;
-       padding: 0;
+        Margin: 20, 5, 5;
+        padding: 0;
     }
 
     .axis-detail {
@@ -636,10 +636,10 @@ footer p {
         height: 50px;
         padding-bottom: 40px;
     }
-    
-      .text-graph-sep {
-    margin-top: 20px;
-}
+
+    .text-graph-sep {
+        margin-top: 20px;
+    }
 }
 
 @media(max-width:991px) {
@@ -723,10 +723,10 @@ footer p {
         height: 40px;
         padding-bottom: 30px;
     }
-    
+
     .text-graph-sep {
-    margin-top: 10px;
-}
+        margin-top: 10px;
+    }
 }
 
 @media(max-width:576px) {
@@ -740,7 +740,13 @@ footer p {
     }
 
     .bio-text {
-        padding: 15px;
+        padding: 5px;
+    }
+
+    .bio-text-pos {
+        bottom: 20%;
+        left: 1%;
+        right: 1%;
     }
 
     .sub-heading {
@@ -759,7 +765,7 @@ footer p {
     }
 
     .bio-para {
-        font-size: small;
+        font-size: x-small;
     }
 
     .section {
@@ -801,8 +807,8 @@ footer p {
         height: 30px;
         padding-bottom: 20px;
     }
-    
-     .section-heading {
+
+    .section-heading {
         font-size: medium;
         margin-top: 20px;
     }
@@ -810,8 +816,8 @@ footer p {
     .section-intro {
         font-size: small;
     }
-    
+
     .text-graph-sep {
-    margin-top: 0px;
-}
+        margin-top: 0px;
+    }
 }

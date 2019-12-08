@@ -87,14 +87,16 @@ Whilst working on the project I ran into a number of bugs that I feel have been 
 2. Ensuring background images for both the homepage and video sections were appropriate for smaller screen sizes.
 
 However, the bugs that I feel still need improving have been addressed in the **Features left to implement** section of this READMe file.
+
 ## Deployment
 
 The site was deployed using GitHub and utilises a single branch. Throughout the development process, at each key phase, I committed the updated files to GitHub so as to back up my work and also allow me to refer back to previous versions of my work.
 
-The deployed site, when accessed directly from an iPad or iPhone, does not render the black & white background images as they do when using the 'inspect' tool of Google Chrome during testing. The images adjusted accordingly during testing, however, on these devices, the images remain large, slightly pixelated, and unrecognisable. This is problematic and needs addressing in future development of the website.
+The deployed site mirrors the site preview throughout the testing process. Rendering, functionality, sizes, and interactive elements were displayed as expected when used on an iPhone X & 11, Samsung S10, and iPad.
 
 Deployed site URL: https://benm4ckenzie.github.io/assignment-two/
-GitHub repository URL: https://github.com/benm4ckenzie/assignment-two
+
+GitHub repository URL: https://github.com/benm4ckenzie/assignment-two/
 
 ## Credits
 
