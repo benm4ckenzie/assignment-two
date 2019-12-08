@@ -4,64 +4,53 @@ The remit of the assignment is to write a custom JavaScript, HTML and CSS code t
 
 ## User Experience
  
- The Beatles wanted a website developed to cater for both current and prospective fans, alike. In doing so, they wanted their webpage to be visually appealing whilst allowing visitors an opportunity to listen, and watch, selected songs from their back catalogue. Furthermore, the band wanted to highlight the fact that they are still performing regularly and are available for hire.
- 
- I wanted the website to provide a minimalist landscape whilst still allowing the user to access all of the key components with ease and with minimal instruction.
- 
- The focus of the website was on the band's artistic flare, to ensure a contrast in colours and tones between sections which, in turn, allowed for ease of identification of those sections as well as provide a visually appealing space.
- 
- The balsamiq wireframe used for this project can be accessed in the wireframes folder of the GitHub repository (Link below).
+ The aim of this website was to provide the user with knowledge pertaining to the planets of our solar system and their relationship with one another. In doing so, I wanted to convey a basic description of all planets as well as use intermediate level planetary data to elaborate on lesser known knowledge, whilst providing a visual representation of the scale of our solar system.
+
+I wanted the website to have a minimalist landscape that provided clear and vivid direction as to the options available to the user. In addition, a dark theme representing the blackness of space was used whilst colours that closely matched the actual colour of each of the planets were used when presenting the data. 
+
+The key, interactive element of the website (The dashboard) was the main focus and provides the user with the ability to isolate individual planets within graphs from a dropdown menu. In addition, the user has the ability to click on a section within a graph to isolate those elements in the other graphs.
+
+Each planet also has its own page providing a brief background of the planet as well as an image so that the user can explore the fundamentals of each planet before delving deeper into the data-sets analysed on the dashboard.
+
+ The wireframe used for this project can be accessed in the wireframe folder of the GitHub repository (Link below).
 
 ## Features
 
 - Home
-    - I wanted the homepage to provide a striking image of the band, identifying who the band were, and offer clear and simple navigation options to the rest of the site. In addition, I wanted to draw the user to additional material on the site by making the background image only 90% of the view height.
-    - An alternative image is used as screen resolution reduces so as to provide a clear indication of the focus of the website.
-- About
-    - No heading was used so as to keep with the minimalist theme of the site and a colourful background offered contrast from the black & white homepage image. This offered an indication that the user was in a new section.
-    - An opaque background was used for the 'about' text so as to still allow the user access to the vivid image of the band in the background.
-    - As screen size reduces, both the font size and the text area changes to ensure an appropriate delivery of material whilst still offering a visually appealing background.
-- Video
-    - Again, a black & white background was used to contrast against the colourful 'about' section background and indicate to the user that they are now in another section.
-    - No heading was used again as I wanted the background image to be brought into focus.
-    - The video itself was placed centrally so the user could not miss it.
-    - The video remains central with a reduction in screen size.
-    - As screen size reduces, an alternative background image is used so as to prevent the initial background image becoming unidentifiable.
-- Music
-    - Each of the band's 15 albums are showcased. Upon pressing the play icon, the user is played a song from that album. Pressing the pause icon pauses the playback of that song.
-    - With a change in screen size comes a change in both the layout of the album covers and the size of the play & pause icons which better suit smaller screen resolutions.
-    - Due to the colourful and diverse nature of the album cover mosaic, there was no requirement for a section background as, with the previous segments, the colours offered suitable contrast to the black & white background image of the 'video' section and therefore provided the user with an indication that they were in a new section.
-    - Due to the size of the images and the number of albums, this is the only segment whereby the section is not viewed with 90% of the view height as the continuous flow of albums should encourage the user to scroll further down the page.
-- Contact
-    - As with all the sections that came before, I wanted a focus to be on the imagery associated with the section. As a result, the header alluding to the contact box was kept brief and to the point.
-    - Again, an opaque text box was used so as to not detract too much from the background image.
-    - The contact box takes up minimal real estate on the page and the submit button is green, paying homage to the colour of the apple that was used as an icon for The Beatles' own record label.
-    - The functions of each box work as intended and provide suitable feedback when not completed correctly.
-    - Both the catch-line and contact segments adjust accordingly with varying screen sizes.
-- Navbar
-    - The navigation bar remains fixed when scrolling through the entire webpage allowing easy access to each section.
-    - At smaller screen sizes the navigation bar collapses to a burger icon so as to not take up too much room on the screen.
-- Footer
-    - As with the navigation bar, the footer offers links to each section of the webpage as well as social media sites.
-    - Font size, footer content and arrangement alter as screen size reduces allowing for a more user-friendly experience.
-- Backgrounds
-    -  As well as the black & white / colour contrast between sections, black & white images remain fixed to add a secondary indication that the user is entering or leaving a specific section.
+    - I wanted the homepage to provide a striking image of the solar system, identifying each of the planets in order, and offer a clear and simple navigation option to enter the rest of the site and explore the information contained within. 
+    - As the screen size changes the image used rotates 90° clockwise so as to ensure the image is still portrayed appropriately and the aim of the image is not lost at smaller resolutions.
+- The Dashboard
+    - A brief heading, providing an overview of the dashboard was provided. I wanted it to be short and to the point allowing the user to explore the data as soon as possible. Just below the header a dropdown menu is presented to the user allowing them to explore a single planet within the graphs displayed.
+    - A black background is used to convey the blackness of space and provide a sharp contrast against the graphs provided.
+    - Navbar and footer both have black backgrounds to remain consistent with the theme of the website, however, they offer muted options until the elements are hovered upon. The active page is displayed in white in the navbar to allow the user to identify what page they are currently on. The navbar and footer remain the same regardless of the page the user is viewing. The navbar also remains fixed to allow the user access to all parts of the site at any time.
+    - Where colour is used to represent data in the graphs, I have tried to link it with colours of the solar system. The pie charts are orange & golden, representing the sun, whilst each of the data-sets pertaining to a particular planet are represented by a colour that closely resembles the colour of that planet. Although these colours are quite muted and less distinct, they fell in-line with how I wanted the website to look.
+    - The graph elements (Axis, labels, etc), as well as the descriptive text are white to offer a sharp contrast against the black background.
+    - Graph types are grouped and sized accordingly to appropriately convey the information contained within. 
+    - As screen size becomes smaller, font size and weight reduce, the positioning of each of the graphs changes to allow for a better user experience when using handheld devices, and the navbar and footer adjust to reduce their content and become more aesthetic whilst not losing any of their functionality.
+- Planet Biographies
+    - I wanted the focus of each of the biographical pages to be the image of the planet.
+    - As a result, an opaque text box was used to contain the information so as to not detract too much from the background image.
+    - The navbar and the footer are present just as they were on the dashboard and respond in exactly the same way.
+    - I didn’t want the user to have to scroll on these pages so all the information is contained within the viewing window. There is no need for the user to look for any information as it is all presented immediately. This is also true at smaller screen sizes as the font size and weight adjusts and the background image of the planets re-sizes to match the screen size.
 
 ### Existing Features
 
-- Navbar - Links to specific sections of the webpage change colour when hovered (Colour and speed consistent in all site hover elements) and clicking on 'The Beatles' will return to homepage. At small screen sizes, navbar menu collapses, and when accessed, will automatically collapse when links is clicked. Hover elements are removed at smaller screen sizes due to the touch screen nature of devices.
-- Background - The backgrounds of 'homepage' and 'video' sections change at smaller screen sizes as original picture was not suitable.
-- About - The word 'contact' in the 'about' section acts as a link to the 'contact' section of the webpage. However, this feature is not highlighted other than when hovered at larger screen resolutions.
-- Music - Pressing the 'play' icon on an album cover will play a song from that album. Pressing the 'pause' button will pause the song that is playing. The layout of the album covers changes as the screen size reduces so as to make it more user friendly. In addition, the size of the 'play' and 'pause' icons reduce to match the resolution.
-- Contact - Font-size reduces to match the screen size. Each element is also adjusted to fit various screen sizes well.
-- Footer - Each footer sub-heading acts as an anchor to each section of the webpage. These elements also change colour when hovered on at larger screen sizes. As the screen size reduces the font-size adjusts accordingly for both the sub-headings and text. At small screen sizes, the text is removed and the sub-headings are stacked centrally so as to take up minimal space. The social media links also change colour at larger screen sizes when hovered and redirect the user to the band's specific pages.
+- Navbar - Links to specific sections of the webpage change colour when hovered (Colour and speed consistent in all site hover elements) and clicking on 'The Planets' will return to homepage. At small screen sizes, navbar menu collapses, and when accessed, will automatically collapse when links is clicked. Hover elements are removed at smaller screen sizes due to the touch screen nature of devices.
+- Background - The background of 'homepage' change at smaller screen sizes as original picture was not suitable and was therefore rotated 90° clockwise to achieve the same desired effect. Also, the backgrounds of each of the planet biographies adjusts accordingly to fit the viewing screen size.
+- Homepage – The ‘Enter’ button, when hovered, changes shade of green and the pointer changes to a finger to indicate the user needs to press the button in order to access the data contained within.
+- Dashboard – There is a dropdown menu to allow the user to isolate a specific planet and display only the data pertaining to that planet in each of the graphs. In addition, if a graph is clicked, the elements contained within the clicked portion will display on each of the other graphs. In order to return the graphs to normal, the clicked portion must be deselected. The graphs display differently depending on screen size and all adjust to ensure the relevant data is visible.
+- Footer - Each footer sub-heading acts as an anchor to each page of the website. These elements also change colour when hovered on at larger screen sizes. As the screen size reduces the font-size adjusts accordingly for both the sub-headings and text. At small screen sizes, the text is removed and the sub-headings are stacked centrally so as to take up minimal space. The social media links also change colour at larger screen sizes when hovered and redirect the user to NASA's specific pages.
 
 ### Features Left to Implement
 
-- As there are no headings present in any of the sections, a feature that needs adding is an 'active' element to the navbar shortcut when the user is within that section.
-- A 'stop' and 'rewind' icon needs adding to each of the album covers without taking up too much space. Alternatively, the 'pause' icon could be replaced by a 'stop' icon that immediately returns the audio file to the start position.
-- The video, upon playback being initiated, should increase to occupy more of the available screen. And, conversely, reduce in size once playback has ended or been stopped.
-- Upon submitting an enquiry, the page currently refreshes and returns to the homepage of the website. The JavaScript required to re-direct the client to a 'Successful submission' page is beyond the compass of my current knowledge and, therefore, requires adding.
+- An X axis label needs adding to the row charts to indicate the units represented. Currently, this is added to the title of the graph.
+- When hovering on plots on the scatter plots, a description of the data pertaining to that planet is displayed in a brief summary. This feature needs expanding upon in other graphs.
+- In the row charts, the label for ‘Uranus’ needs its colour changing to add greater contrast between that and the colour used to represent the data.
+- The number of ticks used in the Y axis on the scatter plots need adjusting to provide a better visual effect.
+- At smaller screen sizes, the names of planets in the X axis on the bar chart need to be altered to prevent overlapping.
+- The font of the dropdown menu needs to be changed to match the rest of the website.
+- Graphs need to be brought in-line with one another on the same row even when the heading above it has a number of lines differing from those adjacent to it.
+- The position and size of the pie charts within their divs need to be modified at various screen sizes to centre and vary viewing sizes.
 
 ## Technologies Used
 
@@ -70,17 +59,21 @@ The remit of the assignment is to write a custom JavaScript, HTML and CSS code t
 - [Google Fonts](https://fonts.google.com)
     - The project uses **Google Fonts** as a source of text fonts.
 - [Bootstrap CDN](https://www.bootstrapcdn.com/)
-    - The project uses **Bootstrap CDN** to help with webpage structure and visual elements.
+    - The project uses **Bootstrap CDN** to help with website structure and visual elements.
 - [HTML5](https://en.wikipedia.org/wiki/HTML5)
-    - The project uses **HTML5** to add content and structure to the webpage.
-- [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+    - The project uses **HTML5** to add content and structure to the website.
+- [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
     - The project uses **CSS** to add style to the HTML5 elements.
+- [JavaScript](https://www.javascript.com)
+    - The project uses **JavaScript** to enable interactivity on the website.
+- [D3](https://www.d3js.org)
+    - The project uses **D3** to enable visualisation of the data-set and allow data interaction.
 
 ## Testing
 
 Throughout the development of the webpage, there was continuous testing and evaluation to ascertain whether the website functioned as planned.
 
-The website was developed, as previously indicated, with minimalism in mind whilst drawing on the artistic side of the band and using their iconic imagery to appeal to both current and prospective fans.
+The website was developed, as previously indicated, with minimalism in mind whilst drawing on the elements of space and its vastness.
 
 The 'inspect' tool in Google Chrome was the primary testing apparatus for the website when investigating the functionality and usability of the site at various screen resolutions. Whilst developing all sections of the website I continually reverted back to this tool to ensure the product matched my expectations which then informed me as to whether further modifications were required.
 
@@ -92,53 +85,40 @@ Whilst working on the project I ran into a number of bugs that I feel have been 
 
 1. The use of a navbar burger icon at large sizes.
 2. Ensuring background images for both the homepage and video sections were appropriate for smaller screen sizes.
-3. The text area sizing in the 'about' section when reducing the screen size was problematic.
-4. Preventing an overlap from the video when in smaller screen sizes caused numerous issues for me when developing this part of the webpage at smaller screen sizes.
-5. Applying the play and pause icons to the album covers posed an issue in ensuring they rendered appropriately at various screen sizes whilst still remaining functional.
 
+However, the bugs that I feel still need improving have been addressed in the **Features left to implement** section of this READMe file.
 ## Deployment
 
 The site was deployed using GitHub and utilises a single branch. Throughout the development process, at each key phase, I committed the updated files to GitHub so as to back up my work and also allow me to refer back to previous versions of my work.
 
 The deployed site, when accessed directly from an iPad or iPhone, does not render the black & white background images as they do when using the 'inspect' tool of Google Chrome during testing. The images adjusted accordingly during testing, however, on these devices, the images remain large, slightly pixelated, and unrecognisable. This is problematic and needs addressing in future development of the website.
 
-Deployed site URL: https://benm4ckenzie.github.io/assignment-one/
-GitHub repository URL: https://github.com/benm4ckenzie/assignment-one
+Deployed site URL: https://benm4ckenzie.github.io/assignment-two/
+GitHub repository URL: https://github.com/benm4ckenzie/assignment-two
 
 ## Credits
 
 ### Code
 
 - [Stack Overflow](https://stackoverflow.com/) was heavily utilised in modifying both HTML5 and CSS code to attain the desired results.
+- [w3schools](https://www.w3schools.com/default.asp) was used for researching HTML5, CSS3 and JavaScript components of the website.
 
 ### Content
 - The planetary dataset used for the interactive element of the website was copied from [NASA](https://nssdc.gsfc.nasa.gov/planetary/factsheet/).
 
-
-- The music video for the 'Video' section of the website was copied from [YouTube](https://www.youtube.com/watch?v=NCtzkaL2t_Y).
-- The audio files for the 'Music' section of the website was taken from my own collection.
-
 ### Media
-
-- The photo used for the 'Homepage' section of the website was obtained from [Zastavki](https://www.zastavki.com/pictures/1680x1050/2009/Space_Solar_System_Planets_016675_.jpg).
-- 
-mars http://3.bp.blogspot.com/-zaGG3YKTrJc/UHH1oDEJnCI/AAAAAAAAFSc/HVxT5i8OSf4/s1600/Mars.jpg
-earth http://www.solstation.com/stars/earth3am.jpg
-jupiter https://3.bp.blogspot.com/-JzB2ruOjBOs/WJy8tR_tJSI/AAAAAAAABdA/26gANOQ4Y4IZyMnEGS2L8X-dvhVhGL0ZQCLcB/s1600/jupiter_HD.jpg
-neptune https://lovecraftianscience.files.wordpress.com/2014/07/neptune_full.jpg
-pluto https://www.snopes.com/tachyon/2018/01/pluto_reclassified_planet_feature.jpg?fit=1200,628
-saturn http://www.esa.int/var/esa/storage/images/esa_multimedia/images/2017/09/saturn/17144186-1-eng-GB/Saturn.jpg
-uranus https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Uranus2.jpg/1200px-Uranus2.jpg
-mercury http://d1jqu7g1y74ds1.cloudfront.net/wp-content/uploads/2008/04/mercurycolor.jpg
-venus https://static-ssl.businessinsider.com/image/58472777e02ba75e658b6ba5-2400
-
-
-- The photo used for the 'About' section of the website was obtained from [Consequence of Sound](https://consequenceofsound.net/2017/04/previously-unreleased-version-of-the-beatles-sgt-peppers-lonely-hearts-club-band-unearthed-from-the-vaults-listen/).
-- The photo used for the 'Video' section of the website was obtained from [SiriusXM](http://blog.siriusxm.com/from-yesterday-to-now-9-beatles-songs-that-are-often-overlooked/).
-- The photo used for the 'Music' section of the website was obtained from my own collection.
-- The photo used for the 'Contact' section of the website was obtained from [All4Prints](http://all4prints.com/en/portraits-iconic/1604-the-beatles-abbey-road.html).
+- The photo used for the 'Homepage' of the website was obtained from [Zastavki](https://www.zastavki.com/pictures/1680x1050/2009/Space_Solar_System_Planets_016675_.jpg).
+- The photo used for the 'Mercury' page of the website was obtained from [Cloud Front](http://d1jqu7g1y74ds1.cloudfront.net/wp-content/uploads/2008/04/mercurycolor.jpg).
+- The photo used for the 'Venus' page of the website was obtained from [Business Insider](https://static-ssl.businessinsider.com/image/58472777e02ba75e658b6ba5-2400).
+- The photo used for the 'Earth' page of the website was obtained from [Solstation](http://www.solstation.com/stars/earth3am.jpg).
+- The photo used for the 'Mars' page of the website was obtained from [Blogspot](http://3.bp.blogspot.com/-zaGG3YKTrJc/UHH1oDEJnCI/AAAAAAAAFSc/HVxT5i8OSf4/s1600/Mars.jpg).
+- The photo used for the 'Jupiter' page of the website was obtained from [Blogspot](https://3.bp.blogspot.com/-JzB2ruOjBOs/WJy8tR_tJSI/AAAAAAAABdA/26gANOQ4Y4IZyMnEGS2L8X-dvhVhGL0ZQCLcB/s1600/jupiter_HD.jpg).
+- The photo used for the 'Saturn' page of the website was obtained from [European Space Agency]( http://www.esa.int/var/esa/storage/images/esa_multimedia/images/2017/09/saturn/17144186-1-eng-GB/Saturn.jpg).
+- The photo used for the 'Uranus' page of the website was obtained from [Wikimedia](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Uranus2.jpg/1200px-Uranus2.jpg).
+- The photo used for the 'Neptune' page of the website was obtained from [Lovecraftian Science](https://lovecraftianscience.files.wordpress.com/2014/07/neptune_full.jpg).
 
 ### Acknowledgements
 
-- I received inspiration for this project from my Father, an avid Beatles fan, who exposed me to their music from a young age. And, as a result, I became a fan, too.
-# assignment-one
+- I received inspiration for this project from my keen interest in all things space. I am an avid reader of Apollo and NASA history as well as being an amateur astronomer.
+
+# assignment-two
